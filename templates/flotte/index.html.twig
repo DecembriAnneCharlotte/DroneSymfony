@@ -1,0 +1,37 @@
+{# {% extends 'base.html.twig' %}
+
+{% block title %}Flotte index{% endblock %}
+
+{% block body %} #}
+    <h1>Flotte index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Identitée</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for flotte in flottes %}
+            <tr>
+                <td>{{ flotte.id }}</td>
+                <td>{{ flotte.identitée }}</td>
+                <td>
+                    <a href="{{ path('app_flotte_show', {'id': flotte.id}) }}">show</a>
+                    <a href="{{ path('app_flotte_edit', {'id': flotte.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {# {{dump(flottes)}} #}
+
+    <a href="{{ path('app_flotte_new') }}">Create new</a>
+{# {% endblock %} #}

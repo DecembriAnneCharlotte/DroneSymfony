@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Flotte{% endblock %}
+
+{% block body %}
+    <h1>Create new Flotte</h1>
+
+    {{ include('flotte/_form.html.twig') }}
+
+    <a href="{{ path('app_flotte_index') }}">back to list</a>
+{% endblock %}
